@@ -9,7 +9,7 @@
                 </p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="{{ config('app.frontend_url') }}" class="inline-flex items-center rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/30 transition hover:bg-indigo-500">
-                        Start your interview
+                        Meet your chatbot
                     </a>
                     <a href="{{ route('profile.show') }}" class="inline-flex items-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900">
                         Update profile
