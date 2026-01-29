@@ -55,7 +55,7 @@
 
                 <!-- Page Heading -->
                 @if (isset($header))
-                    <header class="border-b border-white/10 bg-white/80 shadow-sm backdrop-blur">
+                    <header class="border-b border-white/10 bg-transparent">
                         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                             {{ $header }}
                         </div>

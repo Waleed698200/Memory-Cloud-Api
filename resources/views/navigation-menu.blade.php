@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="sticky top-0 z-40 border-b border-white/10 bg-white/85 backdrop-blur">
+<nav x-data="{ open: false }" class="dark sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 text-slate-100 backdrop-blur">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
                         <x-application-mark class="block h-8 w-auto" />
-                        <span class="text-sm font-semibold tracking-wide text-slate-800">Memoria Cloud</span>
+                        <span class="text-sm font-semibold tracking-wide text-slate-100">Memoria Cloud</span>
                     </a>
                 </div>
 
@@ -26,7 +26,7 @@
                         <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-white/80 px-3 py-2 text-sm font-medium text-slate-600 transition hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/50">
+                                    <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-white/10 px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/20 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400/50">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -39,7 +39,7 @@
                             <x-slot name="content">
                                 <div class="w-60">
                                     <!-- Team Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                    <div class="block px-4 py-2 text-xs text-slate-400">
                                         {{ __('Manage Team') }}
                                     </div>
 
@@ -58,7 +58,7 @@
                                     @if (Auth::user()->allTeams()->count() > 1)
                                         <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                        <div class="block px-4 py-2 text-xs text-slate-400">
                                             {{ __('Switch Teams') }}
                                         </div>
 
@@ -82,7 +82,7 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-white/80 px-3 py-2 text-sm font-medium text-slate-600 transition hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/50">
+                                    <button type="button" class="inline-flex items-center rounded-md border border-transparent bg-white/10 px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/20 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400/50">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -95,7 +95,7 @@
 
                         <x-slot name="content">
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            <div class="block px-4 py-2 text-xs text-slate-400">
                                 {{ __('Manage Account') }}
                             </div>
 
@@ -127,7 +127,7 @@
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center rounded-md p-2 text-slate-500 transition hover:bg-white/60 hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/50">
+                <button @click="open = ! open" class="inline-flex items-center justify-center rounded-md p-2 text-slate-200 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400/50">
                     <svg class="size-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -138,7 +138,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden bg-white/90 backdrop-blur sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden bg-slate-950/95 backdrop-blur sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
@@ -155,8 +155,8 @@
                 @endif
 
                 <div>
-                    <div class="text-base font-medium text-slate-800">{{ Auth::user()->name }}</div>
-                    <div class="text-sm font-medium text-slate-500">{{ Auth::user()->email }}</div>
+                    <div class="text-base font-medium text-slate-100">{{ Auth::user()->name }}</div>
+                    <div class="text-sm font-medium text-slate-300">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 
@@ -186,7 +186,7 @@
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
-                    <div class="block px-4 py-2 text-xs text-gray-400">
+                    <div class="block px-4 py-2 text-xs text-slate-400">
                         {{ __('Manage Team') }}
                     </div>
 
@@ -205,7 +205,7 @@
                     @if (Auth::user()->allTeams()->count() > 1)
                         <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
-                        <div class="block px-4 py-2 text-xs text-gray-400">
+                        <div class="block px-4 py-2 text-xs text-slate-400">
                             {{ __('Switch Teams') }}
                         </div>
 
